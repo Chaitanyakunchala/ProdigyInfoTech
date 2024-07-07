@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e0f7fa;
+    font-family: 'Arial', sans-serif;
+}
+
+#game {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 10px;
+    background-color: #00796b;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cell {
+    width: 120px;
+    height: 120px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.cell:hover {
+    background-color: #b2dfdb;
+    transform: scale(1.05);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
+}
+
+.cell:active {
+    transform: scale(0.95);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.cell.x::before {
+    content: "X";
+    color: #d32f2f;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.cell.o::before {
+    content: "O";
+    color: #388e3c;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
